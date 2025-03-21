@@ -2,44 +2,44 @@
 
 int main() {
     // Estrutura para armazenar os dados das cartas
-        char crt1_estado;
-        char crt2_estado;
-        char crt1_codigo[3];
-        char crt2_codigo[3];
-        char crt1_nomeCidade[50];
-        char crt2_nomeCidade[50];
-        int crt1_populacao;
-        int crt2_populacao;
-        float crt1_area;
-        float crt2_area;
-        float crt1_pib;
-        float crt2_pib;
-        int crt1_numPontosTuristicos;
-        int crt2_numPontosTuristicos;
+    int crt1_estado;
+    int crt2_estado;
+    char crt1_codigo[4]; // Mudança aqui, pesquisa 20.03.2025
+    char crt2_codigo[4]; // Mudança aqui, pesquisa 20.03.2025
+    char crt1_nomeCidade[50];
+    char crt2_nomeCidade[50];
+    int crt1_populacao;
+    int crt2_populacao;
+    float crt1_area;
+    float crt2_area;
+    float crt1_pib;
+    float crt2_pib;
+    int crt1_numPontosTuristicos;
+    int crt2_numPontosTuristicos;
 
     // Leitura dos dados da Carta 1
     printf("Digite os dados da Carta 1:\n");
 
     printf("Digite o Estado (Letras de A até H): ");
-        scanf("%c", &crt1_estado);
+    scanf(" %c", &crt1_estado); // Adicionado espaço para consumir o '\n' deixado pelo buffer. Mudança aqui, pesquisa 20.03.2025
 
     printf("Código da Carta contendo a Letra da Carta acrescido de um numero de 01 a 04 (ex: A01): ");
-        scanf("%s", &crt1_codigo);
+    scanf("%s", crt1_codigo);
 
     printf("Nome da Cidade: ");
-        scanf("%s", &crt1_nomeCidade);
+    scanf(" %s", crt1_nomeCidade); // Adicionado espaço para consumir o '\n' deixado pelo buffer. Mudança aqui, pesquisa 20.03.2025
 
     printf("População: ");
-        scanf("%d", &crt1_populacao);
+    scanf("%d", &crt1_populacao);
 
     printf("Área (em km²): ");
-        scanf("%f", &crt1_area);
+    scanf("%f", &crt1_area);
 
     printf("PIB(em bilhoes de reais): ");
-        scanf("%f", &crt1_pib);
+    scanf("%f", &crt1_pib);
 
     printf("Número de Pontos Turísticos: ");
-        scanf("%d", &crt1_numPontosTuristicos);
+    scanf("%d", &crt1_numPontosTuristicos);
 
     printf("\n"); // Adiciona uma linha em branco para separar as entradas
 
@@ -47,13 +47,13 @@ int main() {
     printf("Digite os dados da Carta 2:\n");
 
     printf("Digite o Estado (Letras de A até H): ");
-    scanf("%c", &crt2_estado);
+    scanf(" %c", &crt2_estado); // Adicionado espaço para consumir o '\n' deixado pelo buffer. Mudança aqui, pesquisa 20.03.2025
 
     printf("Código da Carta contendo a Letra da Carta acrescido de um numero de 01 a 04 (ex: A01): ");
-    scanf("%s", &crt2_codigo);
+    scanf("%s", crt2_codigo);
 
     printf("Nome da Cidade: ");
-    scanf("%s", &crt2_nomeCidade);
+    scanf(" %s", crt2_nomeCidade); // Adicionado espaço para consumir o '\n' deixado pelo buffer. Mudança aqui, pesquisa 20.03.2025
 
     printf("População: ");
     scanf("%d", &crt2_populacao);
@@ -92,5 +92,4 @@ int main() {
     printf("Número de Pontos Turísticos: %d\n", crt2_numPontosTuristicos);
 
     return 0;
-    
 }
