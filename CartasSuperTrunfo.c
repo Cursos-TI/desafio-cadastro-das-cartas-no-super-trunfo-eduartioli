@@ -1,22 +1,16 @@
 #include <stdio.h>
 
 int main() {
-    // Estrutura para armazenar os dados das cartas
-        int crt1_estado;
-        int crt2_estado;
-        char crt1_codigo[4]; // Mudança aqui, pesquisa 20.03.2025
-        char crt2_codigo[4]; // Mudança aqui, pesquisa 20.03.2025
-        char crt1_nomeCidade[50];
-        char crt2_nomeCidade[50];
-        int crt1_populacao;
-        int crt2_populacao;
-        float crt1_area;
-        float crt2_area;
-        float crt1_pib;
-        float crt2_pib;
-        int crt1_numPontosTuristicos;
-        int crt2_numPontosTuristicos;
-        
+    // Variáveis para os dados das cartas 
+    // alteracao dia 21.03.2025
+    char crt1_estado, crt2_estado;
+    char crt1_codigo[4], crt2_codigo[4];
+    char crt1_nomeCidade[50], crt2_nomeCidade[50];
+    unsigned long int crt1_populacao, crt2_populacao;
+    float crt1_area, crt2_area;
+    float crt1_pib, crt2_pib;
+    int crt1_numPontosTuristicos, crt2_numPontosTuristicos;
+
     // Leitura dos dados da Carta 1
     printf("Digite os dados da Carta 1:\n");
 
@@ -42,6 +36,7 @@ int main() {
     scanf("%d", &crt1_numPontosTuristicos);
 
     printf("\n"); // Adiciona uma linha em branco para separar as entradas
+
 
     // Leitura dos dados da Carta 2
     printf("Digite os dados da Carta 2:\n");
@@ -69,40 +64,61 @@ int main() {
 
     printf("\n"); // Adiciona uma linha em branco para separar as saídas
 
-    //Desafio: nível aventureiro
-    //inclusao das formulas apos a entrada de dados, pois antes disso os resultados sao apresentados
-    //de forma divergente todas as vezes, pois ficam lixos de memoria nas variaveis
-    float crt1_DensiPopula = (float)crt1_populacao / crt1_area;
-    float crt2_DensiPopula = (float)crt2_populacao / crt2_area;
-    float crt1_pibpercapita = (float)crt1_pib / crt1_populacao;
-    float crt2_pibpercapita = (float)crt2_pib / crt2_populacao;
+    // Desafio: nível mestre
+    // Nova declaracao de variaveis.
+    float crt1_DensiPopula, crt2_DensiPopula;
+    float crt1_pibPerCapita, crt2_pibPerCapita;
+    float crt1_superPoder, crt2_superPoder;
+
+    // inclusao das formulas apos a entrada de dados, pois antes disso os resultados sao apresentados
+    // de forma divergente todas as vezes, pois ficam lixos de memoria nas variaveis
+    crt1_DensiPopula = (float)crt1_populacao / crt1_area;
+    crt1_pibPerCapita = crt1_pib / crt1_populacao;
+    crt1_superPoder = (float)crt1_populacao + crt1_area + crt1_pib + crt1_numPontosTuristicos + crt1_pibPerCapita + (1.0 / crt1_DensiPopula);
+
+    crt2_DensiPopula = (float)crt2_populacao / crt2_area;
+    crt2_pibPerCapita = crt2_pib / crt2_populacao;
+    crt2_superPoder = (float)crt2_populacao + crt2_area + crt2_pib + crt2_numPontosTuristicos + crt2_pibPerCapita + (1.0 / crt2_DensiPopula);
 
     // Exibição dos dados da Carta 1
     printf("Carta 1:\n");
     printf("Estado: %c\n", crt1_estado);
     printf("Código: %s\n", crt1_codigo);
     printf("Nome da Cidade: %s\n", crt1_nomeCidade);
-    printf("População: %d habitantes\n", crt1_populacao);
+    printf("População: %lu habitantes\n", crt1_populacao);// Exibição como unsigned long int
     printf("Área: %.2f km²\n", crt1_area);
-    printf("PIB: %.2f reais\n", crt1_pib);//adequacao da unidade
+    printf("PIB: %.2f bilhões de reais\n", crt1_pib);
     printf("Número de Pontos Turísticos: %d\n", crt1_numPontosTuristicos);
-    printf("A Densidade Populacional é de: %.2f habitantes por KM²\n", crt1_DensiPopula);
-    printf("O PIB per Capita é de: %.2f reais por habitante\n", crt1_pibpercapita);
+    printf("Densidade Populacional: %.2f hab/km²\n", crt1_DensiPopula);
+    printf("PIB per Capita: %.2f reais\n", crt1_pibPerCapita);
+    printf("Super Poder: %.2f\n", crt1_superPoder);
 
-    printf("\n"); // Adiciona uma linha em branco para separar as cartas
+    printf("\n");
 
     // Exibição dos dados da Carta 2
     printf("Carta 2:\n");
     printf("Estado: %c\n", crt2_estado);
     printf("Código: %s\n", crt2_codigo);
     printf("Nome da Cidade: %s\n", crt2_nomeCidade);
-    printf("População: %d habitantes\n", crt2_populacao);
+    printf("População: %lu habitantes\n", crt2_populacao);// Exibição como unsigned long int
     printf("Área: %.2f km²\n", crt2_area);
-    printf("PIB: %.2f reais\n", crt2_pib);//adequacao de unidade
+    printf("PIB: %.2f bilhões de reais\n", crt2_pib);
     printf("Número de Pontos Turísticos: %d\n", crt2_numPontosTuristicos);
-    printf("A Densidade Populacional é de: %.2f habitantes por KM²\n", crt2_DensiPopula);
-    printf("O PIB per Capita é de: %.2f reais por habitante\n", crt2_pibpercapita);
+    printf("Densidade Populacional: %.2f hab/km²\n", crt2_DensiPopula);
+    printf("PIB per Capita: %.2f reais\n", crt2_pibPerCapita);
+    printf("Super Poder: %.2f\n", crt2_superPoder);
+
+    printf("\n");
+
+    // Comparação das cartas
+    // Desafio: nível mestre
+    printf("População: %s (%d)\n", crt1_populacao > crt2_populacao ? "Carta 1 venceu" : "Carta 2 venceu" , crt1_populacao > crt2_populacao);
+    printf("Área: %s (%d)\n", crt1_area > crt2_area ? "Carta 1 venceu" : "Carta 2 venceu" , crt1_area > crt2_area);
+    printf("PIB: %s (%d)\n", crt1_pib > crt2_pib ? "Carta 1 venceu" : "Carta 2 venceu" , crt1_pib > crt2_pib);
+    printf("Número de Pontos Turísticos: %s (%d)\n", crt1_numPontosTuristicos > crt2_numPontosTuristicos ? "Carta 1 venceu" : "Carta 2 venceu" , crt1_numPontosTuristicos > crt2_numPontosTuristicos);
+    printf("Densidade Populacional: %s (%d)\n", crt1_DensiPopula < crt2_DensiPopula ? "Carta 2 venceu" : "Carta 1 venceu" , crt1_DensiPopula < crt2_DensiPopula);
+    printf("PIB per Capita: %s (%d)\n", crt1_pibPerCapita > crt2_pibPerCapita ? "Carta 1 venceu" : "Carta 2 venceu" , crt1_pibPerCapita > crt2_pibPerCapita);
+    printf("Super Poder: %s (%d)\n", crt1_superPoder > crt2_superPoder ? "Carta 1 venceu" : "Carta 2 venceu" , crt1_superPoder > crt2_superPoder);
 
     return 0;
-    
 }
